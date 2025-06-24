@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:   # <-- Add this line
 
 jobs:
   hello_world:
@@ -17,3 +18,7 @@ jobs:
           echo "Job ID: $GITHUB_JOB"
           echo "Action: $GITHUB_ACTION"
           echo "Actor: $GITHUB_ACTOR"
+
+
+# to run the file user 
+          # gh workflow run manual.yml --f name=mona --f greeting=hello --f data=@myfile.txt
